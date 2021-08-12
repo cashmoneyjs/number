@@ -1,0 +1,9 @@
+{
+    "packageManager": "yarn",
+    "reporters": ["html", "clear-text", "progress"],
+    "testRunner": "command",
+    "commandRunner": { "command": "yarn run test-fast" },
+    "checkers": ["typescript"],
+    "coverageAnalysis": "off",
+    "mutate": ["src/**/*.ts", "!src/index.ts", "!src/alsatian-*.ts", "!src/**/_*.ts", "!src/**/*.d.ts"]
+}
