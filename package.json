@@ -43,5 +43,6 @@
     "keywords": [
         "number",
         "bignumber"
-    ]
+    ],
+    "packageManager": "yarn@3.2.0"
 }
