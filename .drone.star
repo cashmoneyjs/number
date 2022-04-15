@@ -11,10 +11,10 @@ def install_deps(image):
     }
 
 def test(major_version):
-    image = NODE_IMAGE_TEMPLATE.format(major = major_version)
+    image = NODE_IMAGE_TEMPLATE.format(major=major_version)
     return {
         "kind": "pipeline",
-        "name": "test-node{major}".format(major = major_version),
+        "name": "test-node{major}".format(major=major_version),
         "steps": [
             install_deps(image),
             {
