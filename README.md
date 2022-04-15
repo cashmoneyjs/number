@@ -1,5 +1,7 @@
 # Number
 
+[![Build Status](https://drone.matthewgamble.net/api/badges/cashmoneyjs/number/status.svg?ref=refs/heads/master)](https://drone.matthewgamble.net/cashmoneyjs/number)
+
 This package is a wrapper around the BigNumber class provided by [bignumber.js](https://mikemcl.github.io/bignumber.js/),
 designed to provide a string-only representation of arbitrary-precision decimal numbers. This package provides several
 niceties on top of what is normally available with BigNumber, with the aim of being difficult to misuse. The ideal
