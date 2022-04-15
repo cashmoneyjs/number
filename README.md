@@ -5,9 +5,9 @@
 This package is a wrapper around the BigNumber class provided by [bignumber.js](https://mikemcl.github.io/bignumber.js/),
 designed to provide a string-only representation of arbitrary-precision decimal numbers. This package provides several
 niceties on top of what is normally available with BigNumber, with the aim of being difficult to misuse. The ideal
-situation is to replace all usages of the default JavaScript ``Number`` type with the ``Num`` class found in this package.
+situation is to replace all usages of the default JavaScript `Number` type with the `Num` class found in this package.
 
-This was born out of the need to introduce "big number" support to [CashMoney](https://github.com/cashmoneyjs/cashmoney"),
+This was born out of the need to introduce "big number" support to [CashMoney](https://github.com/cashmoneyjs/cashmoney),
 my port of [MoneyPHP](https://github.com/moneyphp/money) to JavaScript. Originally, the number class was rather limited,
 and didn't support arithmetic operations on arbitrary-precision numbers. This package is designed to replace that entirely,
 bringing it into a public interface.
@@ -16,7 +16,7 @@ bringing it into a public interface.
 
 - Full arithmetic support for arbitrary-precision decimal numbers
 - JSON serialization
-- Inter-operation with existing ``BigNumber`` instances
+- Interoperation with existing `BigNumber` instances
 
 ## Install
 
@@ -57,13 +57,13 @@ console.log(fiveFromString.add(5).subtract(5).equals(fiveFromString)) // outputs
 console.log(fiveBigNum.isEqualTo(fiveFromString.num)); // outputs true
 ```
 
-### Support for ``BigNumber.clone()``
+### Support for `BigNumber.clone()`
 
-bignumber.js lets you create "clones" of the main BigNumber constructor with different
+`bignumber.js` lets you create "clones" of the main BigNumber constructor with different
 settings. This lets you have multiple different BigNumber classes in your application,
 each with different defaults.
 
-This functionality is fully supported out of the box by ``Number``.
+This functionality is fully supported out of the box by `Number`.
 
 ```typescript
 import { Num } from "@cashmoney/number";
@@ -73,22 +73,22 @@ const BN = BigNumber.clone({ DECIMAL_PLACES: 10 });
 Num.BigNumber = BN;
 ```
 
-The new constructor function ``BN`` will now be used for all constructions of ``BigNumber``
-performed by the ``Num`` class.
+The new constructor function `BN` will now be used for all constructions of `BigNumber`
+performed by the `Num` class.
 
 If you actually need to do this for some reason, it's strongly recommended that you
-do this once in your application bootstrap code, before any instances of ``Num`` are
+do this once in your application bootstrap code, before any instances of `Num` are
 created. Otherwise, you'll likely end up with various weird behaviours in your application.
-You'll also need to be careful if you're constructing your own instances of ``BigNumber``
+You'll also need to be careful if you're constructing your own instances of `BigNumber`
 in your application and passing them to instances of ``Num``.
 
-Most of the time, you should be able to get away with using ``BigNumber.config()``
-instead. This will automatically take effect for all instances of (the default) ``BigNumber``
-constructor (which ``Num`` uses by default).
+Most of the time, you should be able to get away with using `BigNumber.config()`
+instead. This will automatically take effect for all instances of (the default) `BigNumber`
+constructor (which `Num` uses by default).
 
 ## Tests
 
-To run the test suite, run ``yarn run test`` in the root of the repository.
+To run the test suite, run `yarn run test` in the root of the repository.
 
 ## License
 
