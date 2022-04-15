@@ -5,6 +5,7 @@ def install_deps(image):
     return {
         "name": "install-deps",
         "image": image,
+        "pull": "always",
         "commands": [
             "yarn install --immutable",
         ],
